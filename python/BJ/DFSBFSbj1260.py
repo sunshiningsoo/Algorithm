@@ -21,16 +21,16 @@ def dfs(num):
 
 tempque = []
 def bfs(num):
-    if bool[num] == 1:
-        return
-    bool[num] = 1
     tempque.append(num)
-    print(num+1, end=' ')
-    while len(tempque) != 0:
+    bool[num] = 1
+    while len(tempque):
+        a = tempque[0]
+        del tempque[0]
+        print(a+1, end=' ')
         for i in range(N):
-            if arr[num][i] == 1 and num != i:
-
-
+            if arr[a][i] == 1 and a != i and bool[i] != 1:
+                tempque.append(i)
+                bool[i] = 1
 
 dfs(start-1)
 bool = [0 for _ in range(N)]
