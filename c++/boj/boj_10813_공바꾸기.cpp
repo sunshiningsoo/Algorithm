@@ -1,3 +1,4 @@
+// REF: https://www.acmicpc.net/problem/10813
 #include <iostream>
 #include <vector>
 
@@ -20,7 +21,7 @@ int main(void) {
     for(int i=0;i<M;i++) {
         int a, b;
         cin >> a >> b;
-        swap(temp, temp[a-1], temp[b-1]);
+        swap(temp, a-1, b-1);
     }
 
     for(auto i: temp) cout << i << " ";
