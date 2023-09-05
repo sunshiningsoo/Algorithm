@@ -10,10 +10,11 @@ int main(void) {
         string str;
         cin >> str;
         if (str == "0") break;
-        for (int i=0;i<str.length();i++) {
+        for (int i=0;i<str.length()/2;i++) {
             if (str[i] != str[str.length()-i-1]) {
                 cout << "no\n";
                 checked = true;
+                break;
             }
         }
         if (checked == false) {
