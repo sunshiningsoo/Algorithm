@@ -132,5 +132,8 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 
+*.idea*
+*.vscode*
+cmake-*
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos
