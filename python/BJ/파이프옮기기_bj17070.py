@@ -39,12 +39,33 @@ def solution(x, y, curdir):
         if not breakable:
             solution(x + nxdir[nxtdir][0], y + nxdir[nxtdir][1], nxtdir)
 
+def solution2():
+    answers = [[[0 for _ in range(N)] for _ in range(N)] for _ in range(3)]
+    answers[0][0][1] = 1
+    for i in range(2, N):
+        if world[0][i] != 1:
+            answers[0][0][i] = answers[0][0][i-1]
 
-if world[-1][-1] == 1 or world[0][2] == 1:
-    print(answer)
-else:
-    solution(0, 1, 0)
-    print(answer)
+
+    for i in range(1, N):
+        for j in range(2, N):
+            if world[i][j] == 0 and world[i][j-1] == 0 and world[i-1][j] == 0:
+                answers[2][i][j] = answers[0][i-1][j-1] + answers[1][i-1][j-1] + answers[2][i-1][j-1]
+            if world[i][j] == 0:
+                answers[0][i][j] = answers[0][i][j-1] + answers[2][i][j-1]
+                answers[1][i][j] = answers[1][i-1][j] + answers[2][i-1][j]
+    print(answers[0][-1][-1] + answers[1][-1][-1] + answers[2][-1][-1])
+
+
+
+solution2()
+
+
+# if world[-1][-1] == 1 or world[0][2] == 1:
+#     print(answer)
+# else:
+#     solution(0, 1, 0)
+#     print(answer)
 
 
 
