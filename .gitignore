@@ -135,5 +135,6 @@ iOSInjectionProject/
 *.idea*
 *.vscode*
 cmake-*
-
+*.iml
+*.class
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos
