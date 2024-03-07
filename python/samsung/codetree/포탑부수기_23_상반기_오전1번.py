@@ -230,21 +230,9 @@ while K:
             targetPotap = i
             break
 
-    # for i in world:
-    #     for j in i:
-    #         print(j, end="  ")
-    #     print()
-    # print()
-
     affectedXY = attack(attacker, targetPotap)
     reSetting(affectedXY)
     ## 4. 포탑 정비
-    # print(attacker[-1], attacker[-2], targetPotap[-1], targetPotap[-2])
-    # for i in world:
-    #     for j in i:
-    #         print(j, end="  ")
-    #     print()
-    # print()
     round += 1
     K -= 1
     if K == 0:
@@ -252,10 +240,9 @@ while K:
 
     if check() < 2:
         break
+
     ## 5. last. setting
     attackHistory[(attacker[-1], attacker[-2])] = round
-
-
 
 ans = 0
 for i in world:
